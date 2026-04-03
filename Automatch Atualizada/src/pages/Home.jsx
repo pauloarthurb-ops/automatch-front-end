@@ -270,8 +270,8 @@ const Home = () => {
             </div>
 
             <div className="hidden md:flex items-center gap-4 border-l border-slate-200 pl-6 ml-2">
-              <button 
-                onClick={() => setIsChatOpen(true)} 
+              <button
+                onClick={() => setIsChatOpen(true)}
                 className="flex items-center gap-2 px-4 py-2 rounded-full text-blue-600 border border-blue-200 bg-transparent hover:bg-blue-50 font-bold transition-all"
               >
                 <MessageSquare className="w-4 h-4" />
@@ -381,8 +381,8 @@ const Home = () => {
                 </p>
                 <div className="flex flex-wrap justify-start items-center gap-8 md:gap-12 opacity-70">
                   {stores?.slice(0, 4).map((store) => (
-                    <div 
-                      key={store.id} 
+                    <div
+                      key={store.id}
                       className="grayscale hover:grayscale-0 transition-all cursor-pointer"
                       onClick={() => navigate('/encontrar')}
                     >
@@ -476,7 +476,7 @@ const Home = () => {
                     <p className="text-blue-100 text-xs font-medium uppercase tracking-wider mt-0.5">Atendimento Automatch</p>
                   </div>
                 </div>
-                <button 
+                <button
                   onClick={() => setIsChatOpen(false)}
                   className="hover:bg-white/20 p-2 rounded-full transition-colors"
                 >
@@ -488,12 +488,11 @@ const Home = () => {
               <div className="flex-1 overflow-y-auto p-6 space-y-4 bg-slate-50">
                 {messages.map((msg) => (
                   <div key={msg.id} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
-                    <div 
-                      className={`max-w-[85%] rounded-2xl px-5 py-3.5 shadow-sm ${
-                        msg.sender === 'user' 
-                        ? 'bg-blue-600 text-white rounded-tr-sm' 
-                        : 'bg-white border border-slate-100 text-slate-700 rounded-tl-sm shadow-md'
-                      }`}
+                    <div
+                      className={`max-w-[85%] rounded-2xl px-5 py-3.5 shadow-sm ${msg.sender === 'user'
+                          ? 'bg-blue-600 text-white rounded-tr-sm'
+                          : 'bg-white border border-slate-100 text-slate-700 rounded-tl-sm shadow-md'
+                        }`}
                     >
                       <p className="text-sm leading-relaxed">{msg.text}</p>
                     </div>
@@ -503,7 +502,7 @@ const Home = () => {
 
               {/* Input Area */}
               <div className="p-4 bg-white border-t border-slate-100">
-                <form 
+                <form
                   onSubmit={handleSendMessage}
                   className="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-full px-2 py-2 focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-blue-500 transition-all shadow-sm"
                 >
@@ -514,7 +513,7 @@ const Home = () => {
                     placeholder="Digite sua mensagem..."
                     className="flex-1 bg-transparent border-none focus:outline-none px-4 text-slate-700 text-sm placeholder:text-slate-400"
                   />
-                  <button 
+                  <button
                     type="submit"
                     disabled={!chatMessage.trim()}
                     className="p-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 disabled:opacity-50 disabled:bg-slate-300 disabled:cursor-not-allowed transition-all transform active:scale-95 shadow-md"
